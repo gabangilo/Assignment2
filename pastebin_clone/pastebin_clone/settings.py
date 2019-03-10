@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig', # to get template path to work!!!
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

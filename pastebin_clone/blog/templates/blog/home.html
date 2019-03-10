@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %} <! puts code into body on base.html saving time and code>
+{% block content %} <! starting at the block all code will be run through base.html body>
+    <! for loop for posts>
+    {% for post in posts %}
+        <! post design, snippet template provided by Corey Schafer, edited for A2>
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %} <! end of block of code to run at base.html body>
