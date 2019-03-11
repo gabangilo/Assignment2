@@ -1,0 +1,15 @@
+python3 -m django --version - display django version
+
+django-admin - list of sub commands
+
+django-admin startproject [name] - used to create django project
+
+python3 manage.py runserver - used to start dev environ webserver
+
+python3 manage.py startapp [name] - used to create django app
+
+python3 manage.py makemigrations - detects changes and updates database
+
+python3 manage.py migtrate - migrates tables from database (default tables!)
+
+python3 manage.py createsuperuser - creates a super user in auth_user table (default table!)
