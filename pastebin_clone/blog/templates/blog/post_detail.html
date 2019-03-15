@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %} <!-- puts code into body on base.html saving time and code -->
+{% block content %} <!-- starting at the block all code will be run through base.html body -->
+        <!-- unique post details, snippet template provided by Corey Schafer, edited for A2 -->
+    <article class="media content-section">
+        <img class = "rounded-circle article-img" src = "{{ object.author.profile.image.url }}"> <!-- gets images for homepage -->
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ object.author }}</a>
+                <small class="text-muted">{{ object.date_posted|date:"F d, Y"}}</small>
+                {% if object.author == user %}
+                    <a class = "btn btn-secondary btn-sm mt-1" href = "{% url 'post-update' object.id %}">Update Post</a>
+                    <a class = "btn btn-danger btn-sm mt-1" href = "{% url 'post-delete' object.id %}">Delete Post</a>
+                {% endif %}
+            </div>
+            <h2 class="article-title">{{ object.title }}</h2>
+            <p class="article-content">{{ object.content }}</p>
+        </div>
+    </article>
+{% endblock content %}

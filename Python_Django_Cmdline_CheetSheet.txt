@@ -10,6 +10,10 @@ python3 manage.py startapp [name] - used to create django app
 
 python3 manage.py makemigrations - detects changes and updates database
 
-python3 manage.py migtrate - migrates tables from database (default tables!)
+python3 manage.py migtrate - migrates changes for db actions
 
 python3 manage.py createsuperuser - creates a super user in auth_user table (default table!)
+
+python3 manage.py sqlmigrate [file path, ex blog] [#, ex 0001]- makes tables for specific migrate
+
+python3 manage.py shell - used to implement python code into terminal

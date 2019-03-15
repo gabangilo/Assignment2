@@ -1,5 +1,4 @@
-{% load static %} <! load in main.css from static dir>
-<!DOCTYPE html>
+{% load static %} <!-- load in main.css from static dir -->
 <html>
 <head>
     <!-- Required meta tags -->
@@ -9,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}"> <! generate url for main.css from static dir>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}"> <!-- generate url for main.css from static dir -->
 
     {% if title %}
         <title>Pastebin - {{ title }}</title>
@@ -18,7 +17,7 @@
     {% endif %}
 </head>
 <body>
-    <! navigation bar, snippet template provided by Corey Schafer, edited for A2>
+    <!-- navigation bar, snippet template provided by Corey Schafer, edited for A2 -->
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
@@ -33,7 +32,8 @@
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
-                        {% if user.is_authenticated %} <! if auth link logout and Profile else link register and login>
+                        {% if user.is_authenticated %} <!-- if auth link logout and Profile else link register and login -->
+                            <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
                             <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                             <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                         {% else %}
@@ -46,7 +46,7 @@
         </nav>
     </header>
 
-    <! used for inheritance by other html pages, snippet template provided by Corey Schafer, edited for A2>
+    <!-- used for inheritance by other html pages, snippet template provided by Corey Schafer, edited for A2 -->
     <main role="main" class="container">
         <div class="row">
             <div class="col-md-8">
