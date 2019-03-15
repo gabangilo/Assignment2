@@ -6,16 +6,16 @@ from PIL import Image
 class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete = models.CASCADE)
-    image = models.ImageField(default = 'default.jpg', upload_to = 'profile_pics')
+    image = models.ImageField(default = 'flower.jpeg', upload_to = 'profile_pics')
 
     def __str__(self):  # User object more desc
 
         return f'{self.user.username} Profile'
 
     #  saves image with new dimensions from parent class
-    def save(self):
+    def save(self, *args, **kwargs):
 
-        super().save()
+        super().save(*args, **kwargs)
 
         img = Image.open(self.image.path)
 
