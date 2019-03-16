@@ -41,10 +41,10 @@ its automated functionalities.
       * had the migrations directory that contained migrations made for the db tables used
       * had the templates directory contain the html files used for the web app, this includes:
       
-         * register.py
-         * profile.py
-         * login.py
-         * logout.py
+         * register.html  used for user account creation
+         * profile.html used for user profile editing and account deletion
+         * login.html used for login for users
+         * logout.html used for logout for users
       
       * for the python files there are 6:
          
