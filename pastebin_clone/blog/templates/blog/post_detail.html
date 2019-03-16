@@ -5,7 +5,7 @@
         <img class = "rounded-circle article-img" src = "{{ object.author.profile.image.url }}"> <!-- gets images for homepage -->
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="#">{{ object.author }}</a>
+                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
                 <small class="text-muted">{{ object.date_posted|date:"F d, Y"}}</small>
                 {% if object.author == user %}
                     <div align="right"> <!-- If user is logged and views their own post available buttons to update and delete right side -->
