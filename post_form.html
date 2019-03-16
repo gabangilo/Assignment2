@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- form for post functionality, bootstrap and crispy forms used -->
+    <div class = "content-section">
+        <form method = "POST">
+            {% csrf_token %}
+            <fieldset class = "form-group">
+                <legend class = "border-bottom mb-4">New Paste</legend>
+                {{ form | crispy}}
+            </fieldset>
+            <div> Paste Expiration:
+	        <select name="expiration">
+		    <option value="never"  >Never</option>
+		    <option value="10_mins">10 Minutes</option>
+		    <option value="1_hour" >1 Hour</option>
+		    <option value="1_day"  >1 Day</option>
+		    <option value="1_week" >1 Week</option>
+		    <option value="2_week" >2 Weeks</option>
+		    <option value="1_month">1 Month</option>
+		    <option value="2_month">6 Months</option>
+		    <option value="1_year" >1 Year</option>
+                </select>
+	    </div>
+            <br>
+            <div> Paste Exposure:
+                <select name="exposure">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+            <br>
+            <div class = "form-group">
+                <button class = "btn btn-outline-info" type = "submit">Create New Paste</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
