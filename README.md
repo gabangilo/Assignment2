@@ -54,6 +54,15 @@ its automated functionalities.
          * models.py contains all the classes used for object models
          * forms.py specific forms for creating & updating user profile and accounts
          * signals.py contains all the saving functions for user profiles
+         
+   * security features:
+      
+      * django has built in encrypting for user passwords, plus hashes and salts passwords
+      * django has built in xss mitigation through escape character automated removale functions
+      * django has built in csrf mitigation through the use of django repository functions
+      * django has built in file upload security through setting of max file size and implementing 
+        django function FileExtensionValidator to make sure only text files are uploaded
+      * only actual implementation was the https, done thorugh Let's Encrypt and Certbot 
   
 Additional Resources used in Web App:
   * used bootstrap for styling
